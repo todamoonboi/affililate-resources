@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunarCrush Affiliate Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0F1A2A;
+            --bg-secondary: #0F1A2A;
+            --bg-card: #182A44;
+            --bg-elevated: #1E3454;
+            --accent-primary: #6EFFFC;
+            --accent-secondary: #13F3C9;
+            --accent-tertiary: #00BF98;
+            --accent-purple: #6E3CF5;
+            --accent-yellow: #F7E16F;
+            --accent-green: #4ADE80;
+            --accent-pink: #DD5F75;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --border-subtle: transparent;
+            --border-hover: transparent;
+            --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(110, 255, 252, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(135, 137, 192, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.4;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 12px 0;
+            background: var(--bg-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 10px 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.5;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-login {
+            padding: 8px 18px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-login:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-app {
+            padding: 8px 22px;
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-app:hover {
+            background: #7E4FF5;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--accent-secondary);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease forwards;
+            box-shadow: var(--card-shadow);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(42px, 5vw, 72px);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            animation: fadeInUp 0.6s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .hero-cta {
+            margin-top: 40px;
+            animation: fadeInUp 0.6s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .hero-button:hover {
+            background: #7E4FF5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(110, 60, 245, 0.3);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.6s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .hero-card::before {
+            display: none;
+        }
+
+        .earnings-preview {
+            text-align: center;
+        }
+
+        .earnings-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .earnings-amount {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .earnings-period {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mini-stat {
+            text-align: center;
+        }
+
+        .mini-stat-value {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mini-stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            display: none;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: left;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-number {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 16px;
+            background: none;
+            width: auto;
+            height: auto;
+            border-radius: 0;
+        }
+
+        .step-icon {
+            display: none;
+        }
+
+        .step-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .step-title span {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .step-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-elevated);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Commission Structure */
+        .commission-section {
+            background: var(--bg-primary);
+        }
+
+        .commission-single {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .commission-highlight {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 60px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .commission-highlight::before {
+            display: none;
+        }
+
+        .highlight-rate {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 96px;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .highlight-rate span {
+            font-size: 48px;
+        }
+
+        .highlight-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .highlight-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .commission-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .perk-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .perk-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .perk-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .perk-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .perk-text strong {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .perk-text span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .commission-single {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .highlight-rate {
+                font-size: 72px;
+            }
+
+            .commission-highlight {
+                padding: 48px 32px;
+            }
+        }
+
+        /* Subscription Earnings */
+        .subscription-earnings {
+            background: var(--bg-primary);
+        }
+
+        .earnings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .earnings-card {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .earnings-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .earnings-card.featured {
+            border: none;
+            position: relative;
+        }
+
+        .earnings-card.featured::before {
+            display: none;
+        }
+
+        .plan-badge {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .earnings-card:nth-child(1) .plan-badge {
+            color: var(--accent-yellow);
+        }
+
+        .earnings-card:nth-child(2) .plan-badge {
+            color: var(--accent-green);
+        }
+
+        .earnings-card:nth-child(3) .plan-badge {
+            color: var(--accent-purple);
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .price-original {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .price-discounted {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .plan-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 16px 0;
+        }
+
+        .your-earnings {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+
+        .earnings-label-small {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .earnings-value {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .earnings-freq {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .earnings-example {
+            background: var(--bg-elevated);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .example-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .example-row:last-child {
+            border-bottom: none;
+        }
+
+        .example-row.highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .example-row.highlight span:last-child {
+            color: var(--accent-green);
+        }
+
+        .enterprise-note {
+            text-align: center;
+            margin-top: 32px;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            box-shadow: var(--card-shadow);
+        }
+
+        .enterprise-note span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Affiliate Resources */
+        .resources-section {
+            padding: 80px 0;
+        }
+
+        .resources-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .resources-card::before {
+            display: none;
+        }
+
+        .resources-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .resources-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin: 12px 0 16px;
+        }
+
+        .resources-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .resources-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--accent-purple);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .resources-button:hover {
+            background: #7E4FF5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(110, 60, 245, 0.3);
+        }
+
+        .resources-button span {
+            transition: transform 0.3s ease;
+        }
+
+        .resources-button:hover span {
+            transform: translateX(4px);
+        }
+
+        .resources-visual {
+            position: relative;
+            z-index: 2;
+        }
+
+        .resource-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .preview-item {
+            aspect-ratio: 1;
+            background: var(--bg-elevated);
+            border: none;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .preview-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .nav-center {
+                display: none;
+            }
+            
+            .earnings-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .resources-card {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px;
+            }
+
+            .resources-visual {
+                order: -1;
+            }
+
+            .resource-preview {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0 16px;
+            }
+            
+            .nav-login {
+                display: none;
+            }
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--text-secondary);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-card);
+            border: none;
+            border-radius: 16px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cta-section::before {
+            display: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #7E4FF5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(110, 60, 245, 0.3);
+        }
+
+        .cta-button::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 100px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                text-align: center;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid,
+            .benefits-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .cta-section {
+                padding: 60px 32px;
+                margin: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="https://lunarcrush.com" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.523 0 10 4.477 10 10s-4.477 10-10 10S6 21.523 6 16 10.477 6 16 6zm0 4c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z" fill="white"/>
+                    </svg>
+                </div>
+                LunarCrush
+            </a>
+            <div class="nav-center">
+                <a href="https://lunarcrush.com/products" class="nav-link">
+                    Products
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="https://lunarcrush.com/solutions" class="nav-link">
+                    Solutions
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="https://lunarcrush.com/pricing" class="nav-link">Pricing</a>
+            </div>
+            <div class="nav-right">
+                <button class="nav-login">LOG IN</button>
+                <button class="nav-app">APP</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>Affiliate Program Now Open</span>
+                    </div>
+                    <h1>Get Paid to Share<br><span>Social Intelligence</span></h1>
+                    <p class="hero-description">
+                        Join the LunarCrush Affiliate Program and earn recurring rewards by introducing traders, investors, and builders to the platform that surfaces crypto opportunities before they trend.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">20%</div>
+                            <div class="stat-label">Commission Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$15+</div>
+                            <div class="stat-label">Per Referral</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">200+</div>
+                            <div class="stat-label">Active Affiliates</div>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#" class="hero-button">Apply Now →</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="earnings-preview">
+                            <div class="earnings-label">Your Earnings</div>
+                            <div class="earnings-amount">$15+</div>
+                            <div class="earnings-period">per referral, paid monthly</div>
+                        </div>
+                        <div class="mini-stats">
+                            <div class="mini-stat">
+                                <div class="mini-stat-value">20%</div>
+                                <div class="mini-stat-label">Commission</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="mini-stat-value">USD</div>
+                                <div class="mini-stat-label">Payouts</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="mini-stat-value">Lifetime</div>
+                                <div class="mini-stat-label">Recurring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Start Earning in 3 Simple Steps</h2>
+                <p class="section-subtitle">Get set up in minutes and start earning commissions on every successful referral.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title"><strong>Sign up</strong> <span>for the program</span></h3>
+                    <p class="step-description">Complete a quick application. Once approved, you'll get access to your unique referral link and affiliate dashboard.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title"><strong>Share</strong> <span>LunarCrush</span></h3>
+                    <p class="step-description">Promote LunarCrush to your audience through content, social media, newsletters, or direct outreach. We provide assets to help.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title"><strong>Earn</strong> <span>recurring rewards</span></h3>
+                    <p class="step-description">Get paid for every user who signs up through your link. Track your earnings in real-time and withdraw anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Join</span>
+                <h2 class="section-title">Built for Crypto-Native Partners</h2>
+                <p class="section-subtitle">We've designed our program to reward creators, traders, and community leaders who understand the space.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-content">
+                        <h3>Recurring Commissions</h3>
+                        <p>Earn ongoing rewards for as long as your referrals remain active subscribers. Not a one-time payout—build lasting income.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-content">
+                        <h3>Real-Time Dashboard</h3>
+                        <p>Track clicks, conversions, and earnings with a comprehensive affiliate dashboard. Full transparency on your performance.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <div class="benefit-content">
+                        <h3>Marketing Assets</h3>
+                        <p>Access professionally designed banners, social templates, and branded content to make promotion effortless.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-content">
+                        <h3>Flexible Payouts</h3>
+                        <p>Get paid in US dollars or stablecoins—whatever works best for you. Monthly payouts with no waiting around.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-content">
+                        <h3>Dedicated Support</h3>
+                        <p>Get access to a dedicated affiliate manager who can help optimize your campaigns and answer questions.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <div class="benefit-content">
+                        <h3>High-Converting Product</h3>
+                        <p>LunarCrush is trusted by serious traders. Our social intelligence actually works—making your job easier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commission Structure -->
+    <section class="commission-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Earnings</span>
+                <h2 class="section-title">Simple, Generous Commissions</h2>
+                <p class="section-subtitle">No complicated tiers. No hoops to jump through. Everyone earns the same rate.</p>
+            </div>
+            <div class="commission-single">
+                <div class="commission-highlight">
+                    <div class="highlight-rate">20<span>%</span></div>
+                    <div class="highlight-label">Commission on Every Referral</div>
+                    <p class="highlight-description">Whether it's your first referral or your hundredth, you earn 20% on every subscription. No tiers, no thresholds, no fine print.</p>
+                </div>
+                <div class="commission-perks">
+                    <div class="perk-item">
+                        <div class="perk-icon">✓</div>
+                        <div class="perk-text">
+                            <strong>Recurring Revenue</strong>
+                            <span>Earn 20% for as long as your referrals stay subscribed</span>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <div class="perk-icon">✓</div>
+                        <div class="perk-text">
+                            <strong>No Minimum Threshold</strong>
+                            <span>Start earning from your very first successful referral</span>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <div class="perk-icon">✓</div>
+                        <div class="perk-text">
+                            <strong>Transparent Tracking</strong>
+                            <span>See exactly what you've earned in real-time</span>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <div class="perk-icon">✓</div>
+                        <div class="perk-text">
+                            <strong>Flexible Payouts</strong>
+                            <span>Get paid in US dollars or stablecoins monthly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Earnings -->
+    <section class="subscription-earnings">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Earn on Every Plan</span>
+                <h2 class="section-title">Your Potential Earnings by Subscription</h2>
+                <p class="section-subtitle">Earn 20% on Individual, Builder, and Scale subscriptions. Here's what that looks like.</p>
+            </div>
+            <div class="earnings-grid">
+                <div class="earnings-card">
+                    <div class="plan-badge">Individual</div>
+                    <div class="plan-price">
+                        <span class="price-original">$90</span>
+                        <span class="price-discounted">$76.50</span><span class="price-period">/mo</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <div class="your-earnings">
+                        <span class="earnings-label-small">You Earn</span>
+                        <span class="earnings-value">$15.30</span>
+                        <span class="earnings-freq">/month per referral</span>
+                    </div>
+                    <div class="earnings-example">
+                        <div class="example-row">
+                            <span>10 referrals</span>
+                            <span>$153/mo</span>
+                        </div>
+                        <div class="example-row">
+                            <span>50 referrals</span>
+                            <span>$765/mo</span>
+                        </div>
+                        <div class="example-row highlight">
+                            <span>100 referrals</span>
+                            <span>$1,530/mo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <div class="plan-badge">Builder</div>
+                    <div class="plan-price">
+                        <span class="price-original">$300</span>
+                        <span class="price-discounted">$255</span><span class="price-period">/mo</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <div class="your-earnings">
+                        <span class="earnings-label-small">You Earn</span>
+                        <span class="earnings-value">$51</span>
+                        <span class="earnings-freq">/month per referral</span>
+                    </div>
+                    <div class="earnings-example">
+                        <div class="example-row">
+                            <span>10 referrals</span>
+                            <span>$510/mo</span>
+                        </div>
+                        <div class="example-row">
+                            <span>50 referrals</span>
+                            <span>$2,550/mo</span>
+                        </div>
+                        <div class="example-row highlight">
+                            <span>100 referrals</span>
+                            <span>$5,100/mo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="earnings-card">
+                    <div class="plan-badge">Scale</div>
+                    <div class="plan-price">
+                        <span class="price-original">$900</span>
+                        <span class="price-discounted">$765</span><span class="price-period">/mo</span>
+                    </div>
+                    <div class="plan-divider"></div>
+                    <div class="your-earnings">
+                        <span class="earnings-label-small">You Earn</span>
+                        <span class="earnings-value">$153</span>
+                        <span class="earnings-freq">/month per referral</span>
+                    </div>
+                    <div class="earnings-example">
+                        <div class="example-row">
+                            <span>10 referrals</span>
+                            <span>$1,530/mo</span>
+                        </div>
+                        <div class="example-row">
+                            <span>50 referrals</span>
+                            <span>$7,650/mo</span>
+                        </div>
+                        <div class="example-row highlight">
+                            <span>100 referrals</span>
+                            <span>$15,300/mo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="enterprise-note">
+                <span>Note:</span> Enterprise subscriptions are not eligible for the affiliate program.
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Resources -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="resources-card">
+                <div class="resources-content">
+                    <span class="section-tag">Resources</span>
+                    <h2 class="resources-title">Affiliate Resources</h2>
+                    <p class="resources-description">Access banners, social templates, brand assets, and promotional materials to help you succeed. Everything you need to start promoting LunarCrush effectively.</p>
+                    <a href="#" class="resources-button">
+                        View Resources
+                        <span>→</span>
+                    </a>
+                </div>
+                <div class="resources-visual">
+                    <div class="resource-preview">
+                        <div class="preview-item">📊</div>
+                        <div class="preview-item">🎨</div>
+                        <div class="preview-item">📱</div>
+                        <div class="preview-item">✉️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Common Questions</h2>
+                <p class="section-subtitle">Everything you need to know about the affiliate program.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">Who can join the affiliate program?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Anyone with an audience interested in cryptocurrency—content creators, traders, newsletter writers, community managers, and influencers. We review each application to ensure alignment with our brand.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I get paid?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Commissions are paid in US dollars or stablecoins (USDC)—your choice. Payouts are processed monthly, and you can track your earnings in real-time through your affiliate dashboard.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does approval take?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Most applications are reviewed within 24-48 hours. Once approved, you'll receive immediate access to your affiliate dashboard and unique referral links.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What marketing materials are provided?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Affiliates get access to banners, social media templates, email copy, product screenshots, and branded graphics. Higher tiers receive exclusive content and co-branded materials.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How are referrals tracked?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            LunarCrush partners with PromoteKit and Stripe to track referrals. Each affiliate receives a unique tracking link, and all conversions and payouts are handled seamlessly through this integration.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">When do I stop getting paid?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You get paid every month for as long as a referred user is subscribed. If they unsubscribe, your referral payments stop.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Start Earning?</h2>
+                    <p class="cta-subtitle">Join hundreds of affiliates already earning with LunarCrush. Apply now and start monetizing your crypto audience.</p>
+                    <button class="cta-button">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <div class="logo-icon" style="width: 24px; height: 24px;">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.523 0 10 4.477 10 10s-4.477 10-10 10S6 21.523 6 16 10.477 6 16 6zm0 4c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z" fill="white"/>
+                    </svg>
+                </div>
+                LunarCrush
+            </div>
+            <div class="footer-links">
+                <a href="#">Affiliate Terms</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="footer-copyright">© 2026 LunarCrush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step-card, .benefit-card, .perk-item, .faq-item, .earnings-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
