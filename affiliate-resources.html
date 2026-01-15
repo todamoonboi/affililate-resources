@@ -1,0 +1,2976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Resources | LunarCrush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Background */
+            --bg-canvas: #0B1424;
+            --bg-panel: #0F1B2E;
+            --bg-panel-muted: #132236;
+            --bg-panel-elevated: #152840;
+            
+            /* Text */
+            --text-primary: #E8EDF5;
+            --text-secondary: #9DA7BC;
+            --text-tertiary: #6F7C94;
+            --text-muted: #7E8AA3;
+            
+            /* Accent */
+            --accent-blue: #3C7CFF;
+            --accent-blue-bright: #5A8CFF;
+            --purple-cta: #6A4BFF;
+            --accent-mint: #35D389;
+            --accent-teal: #18B089;
+            
+            /* Status */
+            --status-positive: #3AD171;
+            --status-negative: #F06464;
+            
+            /* Borders */
+            --border-subtle: rgba(255,255,255,0.06);
+            --border-strong: rgba(255,255,255,0.12);
+            --border-accent: rgba(88,149,255,0.45);
+            
+            /* Shadows */
+            --shadow-panel: 0px 16px 40px rgba(0,0,0,0.35);
+            --shadow-glow-blue: 0 0 0 1px rgba(60,124,255,0.2), 0 10px 30px rgba(60,124,255,0.25);
+            --shadow-glow-mint: 0 0 0 1px rgba(53,211,137,0.2), 0 10px 30px rgba(53,211,137,0.2);
+            
+            /* Overlays */
+            --overlay-dot: rgba(255,255,255,0.04);
+            --panel-gradient: linear-gradient(180deg, rgba(19,34,54,0.85) 0%, rgba(11,20,36,0.95) 100%);
+            --hero-texture: radial-gradient(ellipse at center, rgba(74,140,255,0.08) 0%, rgba(11,20,36,0.9) 60%);
+            
+            /* Radii */
+            --radius-xs: 4px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-pill: 999px;
+            
+            /* Legacy mappings for compatibility */
+            --bg-primary: var(--bg-canvas);
+            --bg-card: var(--bg-panel);
+            --purple: var(--purple-cta);
+            --purple-hover: #7a5cff;
+            --green: var(--accent-mint);
+            --green-dim: rgba(53, 211, 137, 0.18);
+            --blue: var(--accent-blue);
+            --card-shadow: var(--shadow-panel);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-canvas);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        /* Dot matrix texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            padding: 1.25rem 2rem;
+            background: var(--bg-canvas);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 200ms;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .header-btns {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-login {
+            padding: 0.5rem 1.125rem;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-pill);
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .btn-login:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: var(--border-accent);
+        }
+
+        .btn-app {
+            padding: 0.5rem 1.125rem;
+            border: none;
+            border-radius: var(--radius-pill);
+            background: var(--purple-cta);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .btn-app:hover {
+            background: var(--purple-hover);
+            transform: scale(1.02);
+        }
+
+        /* Hero with textured background */
+        .hero {
+            padding: 8rem 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--hero-texture);
+        }
+
+        .hero-bg canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--purple-cta);
+            border-radius: var(--radius-pill);
+            color: var(--purple-cta);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            background: rgba(106, 75, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 .italic {
+            font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        .portal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-blue);
+            color: var(--bg-canvas);
+            padding: 0.875rem 1.5rem;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .portal-btn:hover {
+            background: var(--accent-blue-bright);
+            transform: scale(1.02);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        /* Section styles */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Tips Grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 80px;
+        }
+
+        .tip-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+            position: relative;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+        }
+
+        .tip-card:hover {
+            transform: scale(1.02);
+            border-color: var(--border-accent);
+        }
+
+        .tip-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--green-dim);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            color: var(--accent-mint);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tip-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Logo grid */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .logo-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .logo-card:hover {
+            transform: scale(1.02);
+            border-color: var(--border-accent);
+        }
+
+        .logo-preview {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+        }
+
+        .logo-preview.dark {
+            background: #000;
+        }
+
+        .logo-preview.light {
+            background: #fff;
+        }
+
+        .logo-preview.gradient {
+            background: linear-gradient(135deg, var(--bg-panel-muted), var(--bg-panel-elevated));
+        }
+
+        .logo-card h4 {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .logo-card p {
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-btns {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .download-btn {
+            padding: 0.4rem 0.75rem;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-pill);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .download-btn:hover {
+            background: var(--green-dim);
+            color: var(--accent-mint);
+            border-color: var(--accent-mint);
+        }
+
+        /* Brand Colors */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        .color-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .color-card:hover {
+            transform: scale(1.02);
+            border-color: var(--border-accent);
+        }
+
+        .color-swatch {
+            height: 80px;
+        }
+
+        .color-info {
+            padding: 1rem;
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .color-hex {
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            cursor: pointer;
+            transition: color 200ms;
+        }
+
+        .color-hex:hover {
+            color: var(--accent-mint);
+        }
+
+        /* Media Assets Tabs */
+        .media-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .media-tab {
+            padding: 0.625rem 1rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .media-tab:hover {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-primary);
+            border-color: var(--border-strong);
+        }
+
+        .media-tab.active {
+            background: rgba(60,124,255,0.18);
+            color: var(--accent-blue);
+            border-color: var(--border-accent);
+        }
+
+        .media-panel {
+            display: none;
+        }
+
+        .media-panel.active {
+            display: block;
+        }
+
+        /* Media Carousel */
+        .carousel-container {
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-item {
+            flex: 0 0 320px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.02);
+            border-color: var(--border-accent);
+        }
+
+        .carousel-preview {
+            aspect-ratio: 16/9;
+            background: var(--panel-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-preview.video::after {
+            content: '▶';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--bg-canvas);
+            padding-left: 4px;
+        }
+
+        .carousel-preview.icon {
+            aspect-ratio: 1;
+            background: var(--panel-gradient);
+        }
+
+        .carousel-preview.design-tool {
+            aspect-ratio: 4/3;
+            background: var(--panel-gradient);
+        }
+
+        .carousel-preview-content {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .carousel-preview-content .icon-large {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .carousel-info {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .carousel-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .carousel-meta {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: 50%;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            z-index: 10;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .carousel-nav:hover {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .carousel-nav.prev {
+            left: -20px;
+        }
+
+        .carousel-nav.next {
+            right: -20px;
+        }
+
+        /* Social posts */
+        .platform-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .platform-tab {
+            padding: 0.625rem 1rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .platform-tab:hover {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-primary);
+        }
+
+        .platform-tab.active {
+            background: var(--green-dim);
+            color: var(--accent-mint);
+            border-color: rgba(53,211,137,0.45);
+        }
+
+        .posts-container {
+            display: none;
+        }
+
+        .posts-container.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 16px;
+        }
+
+        .post-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .post-card:hover {
+            transform: scale(1.01);
+            border-color: var(--border-accent);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1rem;
+            background: var(--bg-panel-muted);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .post-number {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-xs);
+        }
+
+        .post-type {
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+
+        .post-content {
+            padding: 1rem;
+        }
+
+        .post-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .post-text .hashtag { color: var(--accent-blue); }
+        .post-text .mention { color: var(--accent-blue); }
+        .post-text .code { 
+            background: rgba(255,255,255,0.06); 
+            padding: 0.15rem 0.4rem; 
+            border-radius: var(--radius-xs);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-mint);
+        }
+
+        .copy-btn {
+            width: calc(100% - 2rem);
+            margin: 0 1rem 1rem;
+            padding: 0.625rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-pill);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .copy-btn:hover {
+            background: var(--green-dim);
+            color: var(--accent-mint);
+            border-color: rgba(53,211,137,0.45);
+        }
+
+        .copy-btn.copied {
+            background: var(--green-dim);
+            color: var(--accent-mint);
+            border-color: rgba(53,211,137,0.45);
+        }
+
+        /* FAQ section */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-strong);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.1rem 1.25rem;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .faq-question:hover {
+            color: var(--accent-blue);
+        }
+
+        .faq-icon {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+            font-weight: 300;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .faq-answer-inner a {
+            color: var(--accent-mint);
+            text-decoration: none;
+        }
+
+        .faq-answer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Quick links - centered */
+        .quick-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 48px;
+            margin-bottom: 48px;
+        }
+
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-panel);
+        }
+
+        .quick-link:hover {
+            background: rgba(60,124,255,0.18);
+            color: var(--accent-blue);
+            border-color: var(--border-accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-panel);
+            padding: 48px 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer-logo-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 200ms;
+        }
+
+        .footer-legal a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-legal span {
+            color: var(--text-tertiary);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 200ms;
+        }
+
+        .footer-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 200ms;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .colors-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .carousel-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .tips-grid, .logo-grid, .colors-grid {
+                grid-template-columns: 1fr;
+            }
+            .posts-container.active {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+            main {
+                padding: 0 1rem 3rem;
+            }
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-inner {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            .footer-left {
+                align-items: center;
+            }
+            .footer-right {
+                align-items: center;
+            }
+            .carousel-item {
+                flex: 0 0 280px;
+            }
+            .section {
+                margin-bottom: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="https://lunarcrush.com" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" stroke="#f0f6fc" stroke-width="2" fill="none"/>
+                        <circle cx="16" cy="16" r="6" fill="#f0f6fc"/>
+                    </svg>
+                </div>
+                <span class="logo-text">LunarCrush</span>
+            </a>
+            <nav class="nav-links">
+                <a href="https://lunarcrush.com/products" class="nav-link">Products</a>
+                <a href="https://lunarcrush.com/solutions" class="nav-link">Solutions</a>
+                <a href="https://lunarcrush.com/pricing" class="nav-link">Pricing</a>
+            </nav>
+            <div class="header-btns">
+                <button class="btn-login">LOG IN</button>
+                <button class="btn-app">APP</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <span class="hero-badge">Affiliate Resources</span>
+        <h1>Everything You Need to<br><span class="italic">Share &amp; Earn</span></h1>
+        <p class="hero-desc">Download logos, grab ready-made posts, and access marketing assets. Use your unique affiliate code to earn 20% recurring commission on every referral.</p>
+        <a href="https://lunarcrush.com/affiliate/portal" class="portal-btn">
+            Open Affiliate Portal →
+        </a>
+    </section>
+
+    <main>
+        <!-- Tips for Success -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Tips for Success</h2>
+                <p class="section-desc">Best practices from top-performing affiliates</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <h4>Share Real Insights</h4>
+                    <p>Use LunarCrush data in your posts. Share Galaxy Scores, trending coins, or sentiment shifts. Authentic content converts better than generic promotions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <h4>Be Consistent</h4>
+                    <p>Post regularly about your experience. Daily or weekly market updates using LC data build trust and keep your audience engaged with your content.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <h4>Target Your Audience</h4>
+                    <p>Crypto traders, DeFi users, and NFT collectors all benefit from social intelligence. Tailor your message to the communities you're active in.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <h4>Go Multi-Platform</h4>
+                    <p>Don't limit yourself to one platform. Share on X, Reddit, Telegram, TikTok, and LinkedIn to maximize reach and conversions.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <h4>Create Video Content</h4>
+                    <p>Screen recordings of LunarCrush in action perform exceptionally well. Show the platform, explain a feature, or share a discovery.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <h4>Track Performance</h4>
+                    <p>Use the affiliate portal to monitor clicks, conversions, and commissions. Double down on what works and iterate on what doesn't.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logos Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Brand Logos</h2>
+                <p class="section-desc">Official LunarCrush logos for your promotional content</p>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-card">
+                    <div class="logo-preview dark">
+                        <svg width="140" height="32" viewBox="0 0 140 32">
+                            <circle cx="16" cy="16" r="12" stroke="#f0f6fc" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="16" r="5" fill="#f0f6fc"/>
+                            <text x="36" y="20" fill="#f0f6fc" font-family="Inter, sans-serif" font-weight="600" font-size="14">LunarCrush</text>
+                        </svg>
+                    </div>
+                    <h4>Primary Dark</h4>
+                    <p>For dark backgrounds</p>
+                    <div class="download-btns">
+                        <button class="download-btn" onclick="downloadAsset('logo-primary-dark', 'svg')">SVG</button>
+                        <button class="download-btn" onclick="downloadAsset('logo-primary-dark', 'png')">PNG</button>
+                    </div>
+                </div>
+
+                <div class="logo-card">
+                    <div class="logo-preview light">
+                        <svg width="140" height="32" viewBox="0 0 140 32">
+                            <circle cx="16" cy="16" r="12" stroke="#0d1117" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="16" r="5" fill="#0d1117"/>
+                            <text x="36" y="20" fill="#0d1117" font-family="Inter, sans-serif" font-weight="600" font-size="14">LunarCrush</text>
+                        </svg>
+                    </div>
+                    <h4>Primary Light</h4>
+                    <p>For light backgrounds</p>
+                    <div class="download-btns">
+                        <button class="download-btn" onclick="downloadAsset('logo-primary-light', 'svg')">SVG</button>
+                        <button class="download-btn" onclick="downloadAsset('logo-primary-light', 'png')">PNG</button>
+                    </div>
+                </div>
+
+                <div class="logo-card">
+                    <div class="logo-preview gradient">
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="18" stroke="#f0f6fc" stroke-width="2" fill="none"/>
+                            <circle cx="24" cy="24" r="7" fill="#f0f6fc"/>
+                        </svg>
+                    </div>
+                    <h4>Icon Only</h4>
+                    <p>Square icon for profiles</p>
+                    <div class="download-btns">
+                        <button class="download-btn" onclick="downloadAsset('logo-icon', 'svg')">SVG</button>
+                        <button class="download-btn" onclick="downloadAsset('logo-icon', 'png')">PNG</button>
+                    </div>
+                </div>
+
+                <div class="logo-card">
+                    <div class="logo-preview dark">
+                        <svg width="140" height="32" viewBox="0 0 140 32">
+                            <circle cx="16" cy="16" r="12" stroke="#3fb950" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="16" r="5" fill="#3fb950"/>
+                            <text x="36" y="20" fill="#3fb950" font-family="Inter, sans-serif" font-weight="600" font-size="14">LunarCrush</text>
+                        </svg>
+                    </div>
+                    <h4>Brand Green</h4>
+                    <p>Single color variant</p>
+                    <div class="download-btns">
+                        <button class="download-btn" onclick="downloadAsset('logo-green', 'svg')">SVG</button>
+                        <button class="download-btn" onclick="downloadAsset('logo-green', 'png')">PNG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Colors -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Brand Colors</h2>
+                <p class="section-desc">Official color palette for consistent branding</p>
+            </div>
+
+            <div class="colors-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #3C7CFF;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Blue</div>
+                        <div class="color-hex" onclick="copyColor('#3C7CFF')">#3C7CFF</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #6A4BFF;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Purple CTA</div>
+                        <div class="color-hex" onclick="copyColor('#6A4BFF')">#6A4BFF</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #35D389;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Mint</div>
+                        <div class="color-hex" onclick="copyColor('#35D389')">#35D389</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0B1424;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Canvas</div>
+                        <div class="color-hex" onclick="copyColor('#0B1424')">#0B1424</div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0F1B2E;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Panel</div>
+                        <div class="color-hex" onclick="copyColor('#0F1B2E')">#0F1B2E</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Assets with Tabs -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Media Assets</h2>
+                <p class="section-desc">Images, videos, and design resources for your promotional content</p>
+            </div>
+
+            <div class="media-tabs">
+                <button class="media-tab active" onclick="switchMediaTab('images')">📷 Images</button>
+                <button class="media-tab" onclick="switchMediaTab('videos')">🎬 Videos</button>
+                <button class="media-tab" onclick="switchMediaTab('icons')">✨ Icons</button>
+                <button class="media-tab" onclick="switchMediaTab('emails')">📧 Emails</button>
+                <button class="media-tab" onclick="switchMediaTab('figma')">🎨 Figma</button>
+                <button class="media-tab" onclick="switchMediaTab('canva')">🖼️ Canva</button>
+            </div>
+
+            <!-- Images Panel -->
+            <div class="media-panel active" id="panel-images">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('images', -1)">‹</button>
+                    <div class="carousel" id="carousel-images">
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">📊 Galaxy Score Dashboard</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Dashboard Overview</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-dashboard')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">📈 AltRank Leaderboard</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">AltRank Screenshot</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-altrank')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">🔥 Trending Topics</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Trending View</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-trending')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">💬 Social Feed</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Social Feed View</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-social')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">🌙 Creator Rankings</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Creators Screenshot</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-creators')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">📱 Mobile App</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Mobile Screenshots</div>
+                                    <div class="carousel-meta">1080×1920 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-mobile')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">🎯 Coin Detail Page</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Coin Analysis View</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-coin')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview">
+                                <div class="carousel-preview-content">📉 Market Overview</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Market Dashboard</div>
+                                    <div class="carousel-meta">1920×1080 PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('img-market')">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('images', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Videos Panel -->
+            <div class="media-panel" id="panel-videos">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('videos', -1)">‹</button>
+                    <div class="carousel" id="carousel-videos">
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">Platform Walkthrough</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Intro Video</div>
+                                    <div class="carousel-meta">60s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-intro')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">Galaxy Score Explained</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Galaxy Score Tutorial</div>
+                                    <div class="carousel-meta">45s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-galaxy')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">How to Find Alpha</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Alpha Tutorial</div>
+                                    <div class="carousel-meta">90s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-alpha')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">AltRank Deep Dive</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">AltRank Explained</div>
+                                    <div class="carousel-meta">30s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-altrank')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">Mobile App Demo</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">App Walkthrough</div>
+                                    <div class="carousel-meta">45s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-mobile')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">Social Sentiment 101</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Sentiment Tutorial</div>
+                                    <div class="carousel-meta">60s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-sentiment')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview video">
+                                <div class="carousel-preview-content">Creator Rankings Guide</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Creators Tutorial</div>
+                                    <div class="carousel-meta">40s • MP4</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('vid-creators')">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('videos', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Icons Panel -->
+            <div class="media-panel" id="panel-icons">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('icons', -1)">‹</button>
+                    <div class="carousel" id="carousel-icons">
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">🌙</span>Moon Icon</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">LunarCrush Moon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-moon')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">📊</span>Galaxy Score</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Galaxy Score Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-galaxy')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">📈</span>AltRank</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">AltRank Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-altrank')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">🔥</span>Trending</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Trending Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-trending')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">💬</span>Social</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Social Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-social')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">😀</span>Sentiment</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Sentiment Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-sentiment')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">👤</span>Creator</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Creator Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-creator')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview icon">
+                                <div class="carousel-preview-content"><span class="icon-large">⚡</span>Alpha</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Alpha Icon</div>
+                                    <div class="carousel-meta">SVG + PNG</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('icon-alpha')">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('icons', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Emails Panel -->
+            <div class="media-panel" id="panel-emails">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('emails', -1)">‹</button>
+                    <div class="carousel" id="carousel-emails">
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">👋</span>Welcome Email</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">New User Welcome</div>
+                                    <div class="carousel-meta">HTML Template</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('email-welcome')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🚀</span>Product Update</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Feature Announcement</div>
+                                    <div class="carousel-meta">HTML Template</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('email-update')">Download</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">💰</span>Promo Email</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Discount Promotion</div>
+                                    <div class="carousel-meta">HTML Template</div>
+                                </div>
+                                <button class="download-btn" onclick="downloadAsset('email-promo')">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('emails', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Figma Panel -->
+            <div class="media-panel" id="panel-figma">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('figma', -1)">‹</button>
+                    <div class="carousel" id="carousel-figma">
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🎨</span>Brand Kit</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Complete Brand Kit</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('brand-kit')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📱</span>Social Templates</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Social Media Pack</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('social-templates')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🖼️</span>Banner Templates</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Banner Pack</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('banners')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📊</span>Infographic Kit</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Data Visualization</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('infographics')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">✨</span>Icon Library</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Custom Icons</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('icons')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📐</span>UI Components</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Component Library</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('components')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🎯</span>Presentation Deck</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Slide Templates</div>
+                                    <div class="carousel-meta">Figma File</div>
+                                </div>
+                                <button class="download-btn" onclick="openFigma('presentation')">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('figma', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Canva Panel -->
+            <div class="media-panel" id="panel-canva">
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollCarousel('canva', -1)">‹</button>
+                    <div class="carousel" id="carousel-canva">
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📱</span>Instagram Posts</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">IG Post Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('ig-posts')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📖</span>Instagram Stories</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">IG Story Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('ig-stories')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🐦</span>Twitter/X Posts</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">X Post Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('x-posts')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">💼</span>LinkedIn Posts</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">LinkedIn Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('linkedin')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🎬</span>TikTok Covers</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">TikTok Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('tiktok')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">▶️</span>YouTube Thumbnails</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">YT Thumbnail Pack</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('youtube')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">📧</span>Email Headers</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Email Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('email')">Open</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-preview design-tool">
+                                <div class="carousel-preview-content"><span class="icon-large">🖥️</span>Web Banners</div>
+                            </div>
+                            <div class="carousel-info">
+                                <div>
+                                    <div class="carousel-name">Banner Templates</div>
+                                    <div class="carousel-meta">Canva Template</div>
+                                </div>
+                                <button class="download-btn" onclick="openCanva('banners')">Open</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('canva', 1)">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Social Posts -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Ready-to-Post Content</h2>
+                <p class="section-desc">Copy these posts and add your affiliate code. Replace <span style="color: var(--green);">[YOUR_CODE]</span> with your unique code.</p>
+            </div>
+
+            <div class="platform-tabs">
+                <button class="platform-tab active" onclick="switchPlatform('x')">𝕏 Twitter</button>
+                <button class="platform-tab" onclick="switchPlatform('reddit')">Reddit</button>
+                <button class="platform-tab" onclick="switchPlatform('linkedin')">LinkedIn</button>
+                <button class="platform-tab" onclick="switchPlatform('instagram')">Instagram</button>
+                <button class="platform-tab" onclick="switchPlatform('tiktok')">TikTok</button>
+                <button class="platform-tab" onclick="switchPlatform('telegram')">Telegram</button>
+            </div>
+
+            <!-- X/Twitter Posts -->
+            <div class="posts-container active" id="posts-x">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Discovery Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Just found <span class="mention">@LunarCrush</span> and it's a game changer for tracking crypto sentiment.
+
+Galaxy Score + AltRank show you what's gaining traction before CT catches on.
+
+Use code <span class="code">[YOUR_CODE]</span> for a discount.
+
+<span class="hashtag">#Crypto</span> <span class="hashtag">#Trading</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Insight Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Hot take: social sentiment leads price action.
+
+<span class="mention">@LunarCrush</span> tracks 100M+ social posts daily across crypto.
+
+Their Galaxy Score predicted several of my best entries this year.
+
+Code <span class="code">[YOUR_CODE]</span> for discount 👇
+lunarcrush.com</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Feature Highlight</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Stop trading blind.
+
+<span class="mention">@LunarCrush</span> shows you:
+• What's trending before CT notices
+• Sentiment shifts in real-time  
+• Which influencers move markets
+
+Social alpha is real. Code <span class="code">[YOUR_CODE]</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Question Hook</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How do you research coins before buying?
+
+I use <span class="mention">@LunarCrush</span> to track social sentiment across X, Reddit, TikTok, and YouTube.
+
+When Galaxy Score spikes before price does, I pay attention.
+
+<span class="code">[YOUR_CODE]</span> for discount</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Results Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Been using <span class="mention">@LunarCrush</span> for 3 months.
+
+The AltRank metric alone has helped me spot momentum before breakouts.
+
+Not financial advice but the data speaks for itself.
+
+Try it: code <span class="code">[YOUR_CODE]</span>
+
+<span class="hashtag">#CryptoTrading</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">Thread Starter</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Want to know what crypto narratives are forming?
+
+<span class="mention">@LunarCrush</span> aggregates social data from every major platform.
+
+Here's what I check every morning:
+1. Galaxy Score movers
+2. AltRank climbers
+3. Sentiment shifts
+
+Code <span class="code">[YOUR_CODE]</span> for discount
+
+<span class="hashtag">#Crypto</span> <span class="hashtag">#Alpha</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+
+            <!-- Reddit Posts -->
+            <div class="posts-container" id="posts-reddit">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Review Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Been using LunarCrush for a few months, thought I'd share my experience.
+
+It's a social listening tool for crypto - tracks mentions, sentiment, and engagement across Twitter, Reddit, TikTok, YouTube.
+
+The Galaxy Score is useful for gauging overall market interest. Not a crystal ball, but adds solid context to research.
+
+Free tier is generous. Paid unlocks more depth.
+
+Code [YOUR_CODE] for discount if you try it.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Tool Recommendation</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">For anyone looking to add social data to their research stack:
+
+LunarCrush aggregates social metrics from major platforms and quantifies sentiment for 4000+ coins.
+
+Main features I use:
+- Galaxy Score (overall social health)
+- AltRank (relative social strength)
+- Creator rankings
+
+It's not magic but helps identify narratives early.
+
+Affiliate code [YOUR_CODE] for discount.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Discussion Starter</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Does anyone else use social sentiment data for trading?
+
+I've been testing LunarCrush and the correlation between their metrics and price moves is interesting.
+
+When a coin's Galaxy Score jumps significantly while price stays flat, often see movement within 24-72 hours.
+
+Anyone else tracking this? Use code [YOUR_CODE] if you want to test it.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Comparison Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Compared a few social analytics tools for crypto. Here's my take on LunarCrush:
+
+Pros:
+- Covers multiple platforms (not just Twitter)
+- Proprietary metrics are genuinely useful
+- Clean interface
+- API access for builders
+
+Cons:
+- Premium features require subscription
+- Learning curve for metrics
+
+Overall worth trying. Code [YOUR_CODE] for discount.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Use Case Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How I use LunarCrush in my research workflow:
+
+1. Check AltRank for coins moving up in social strength
+2. Look at Galaxy Score trend over 7 days
+3. Review top posts to understand the narrative
+4. Cross-reference with on-chain data
+
+Helps filter noise and focus on coins with genuine momentum.
+
+Code [YOUR_CODE] if useful.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">PSA Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">PSA for anyone doing crypto research:
+
+Social sentiment data matters more than most people realize. Narratives form on Twitter/Reddit before they show up in price.
+
+LunarCrush quantifies this with their Galaxy Score and AltRank metrics. Been using it to filter through the noise.
+
+Free tier available. Code [YOUR_CODE] for premium discount.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+
+            <!-- LinkedIn Posts -->
+            <div class="posts-container" id="posts-linkedin">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Industry Insight</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">The crypto market has a data problem.
+
+Prices move on sentiment, but most analysts are flying blind.
+
+LunarCrush solves this by aggregating social intelligence from millions of posts across X, Reddit, TikTok, and YouTube.
+
+Their proprietary metrics quantify market sentiment before it shows up in price action.
+
+For anyone serious about crypto analysis, worth exploring.
+
+Code [YOUR_CODE] for discount at lunarcrush.com</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Thought Leadership</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Social data is becoming essential for crypto analysis.
+
+Why? Because crypto markets are driven by narratives, and narratives form on social media before they hit mainstream news.
+
+LunarCrush tracks over 100M social interactions daily, providing institutional-grade sentiment analysis.
+
+Key metrics:
+• Galaxy Score™ - overall social health
+• AltRank™ - relative social strength
+• Creator influence rankings
+
+Code [YOUR_CODE] for access.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Professional Use Case</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How do you separate signal from noise in crypto markets?
+
+I've been using LunarCrush for social intelligence - it aggregates sentiment data from every major platform into actionable metrics.
+
+Particularly useful for:
+- Identifying emerging narratives early
+- Monitoring competitor positioning
+- Understanding retail sentiment
+
+For teams doing crypto research, it's a valuable addition to the stack.
+
+Code [YOUR_CODE] at lunarcrush.com</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Market Analysis</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">In traditional markets, we have Bloomberg terminals and Reuters.
+
+In crypto? Social media IS the terminal.
+
+LunarCrush has built what I consider the Bloomberg of crypto social intelligence:
+- Real-time sentiment across platforms
+- Proprietary scoring algorithms
+- API access for integration
+
+For crypto professionals, this is infrastructure.
+
+Explore with code [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Tool Recommendation</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Asked frequently about crypto research tools.
+
+For social sentiment analysis: LunarCrush.
+
+What makes it different:
+1. Multi-platform coverage (not just Twitter)
+2. Proprietary metrics backed by real data
+3. Historical trend analysis
+4. Clean API for developers
+
+Not affiliated beyond using and recommending it.
+
+Code [YOUR_CODE] for discount if you try it.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">Data-Driven Insight</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Crypto markets are increasingly driven by social narratives.
+
+The challenge: quantifying something as qualitative as "sentiment."
+
+LunarCrush solves this by processing 100M+ social interactions daily across X, Reddit, TikTok, and YouTube.
+
+Their Galaxy Score™ provides a single metric for social health that's become part of my daily analysis.
+
+Worth exploring: lunarcrush.com (code [YOUR_CODE])</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+
+            <!-- Instagram Posts -->
+            <div class="posts-container" id="posts-instagram">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Carousel Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How to spot crypto trends before they blow up 📈
+
+Swipe to see the tool I use →
+
+LunarCrush tracks social sentiment across every platform so you can see what's gaining traction early.
+
+Galaxy Score = overall hype level
+AltRank = strength vs other coins
+
+Link in bio 🔗 Code: [YOUR_CODE]
+
+<span class="hashtag">#crypto</span> <span class="hashtag">#trading</span> <span class="hashtag">#bitcoin</span> <span class="hashtag">#altcoins</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Reel Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">POV: You found a tool that shows what's trending in crypto before everyone else 🤯
+
+LunarCrush tracks millions of social posts daily.
+
+When sentiment spikes, price usually follows.
+
+Not financial advice but the data is 🔥
+
+Code [YOUR_CODE] for discount
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#trading</span> <span class="hashtag">#crypto</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Story/Post Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">The secret? Social data 📊
+
+LunarCrush shows you:
+✓ What's trending
+✓ Sentiment shifts
+✓ Influencer activity
+
+I use it daily for research.
+
+Try it → lunarcrush.com
+Code: [YOUR_CODE]
+
+<span class="hashtag">#cryptotrading</span> <span class="hashtag">#research</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Educational Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Most people trade crypto with only price charts.
+
+Smart money tracks social sentiment too 🧠
+
+LunarCrush gives you:
+• Galaxy Score - social health of any coin
+• AltRank - how it compares to others
+• Creator rankings - who's moving markets
+
+Game changer for research.
+
+Link in bio | Code: [YOUR_CODE]
+
+<span class="hashtag">#cryptoeducation</span> <span class="hashtag">#trading</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Quick Tip Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Free alpha: LunarCrush 🌙
+
+Tracks social sentiment for 4000+ coins.
+
+When Galaxy Score spikes → pay attention.
+
+This is how narratives form before price moves.
+
+Not financial advice, just data.
+
+lunarcrush.com | Code: [YOUR_CODE]
+
+<span class="hashtag">#crypto</span> <span class="hashtag">#alpha</span> <span class="hashtag">#trading</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">Before/After Post</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How I used to research crypto: 😅
+❌ Scrolling CT for hours
+❌ Missing early narratives
+❌ No idea what's actually trending
+
+How I research now: 🧠
+✅ Check LunarCrush Galaxy Score
+✅ See sentiment across ALL platforms
+✅ Spot trends before they pump
+
+Game changer. Code: [YOUR_CODE]
+
+<span class="hashtag">#crypto</span> <span class="hashtag">#trading</span> <span class="hashtag">#research</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+
+            <!-- TikTok Posts -->
+            <div class="posts-container" id="posts-tiktok">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Hook Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">This tool shows what's trending in crypto BEFORE it pumps 👀
+
+LunarCrush tracks millions of social posts daily.
+
+Galaxy Score shows the hype level.
+AltRank shows strength vs others.
+
+When both spike = pay attention.
+
+lunarcrush.com code [YOUR_CODE]
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#crypto</span> <span class="hashtag">#trading</span> <span class="hashtag">#alpha</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Tutorial Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">How I research crypto in 60 seconds ⏱️
+
+Step 1: Check LunarCrush
+Step 2: Look at Galaxy Score trend
+Step 3: Check AltRank position
+Step 4: Read top social posts
+Step 5: Make decision
+
+Social sentiment = early signal
+
+Code [YOUR_CODE] for discount
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#learn</span> <span class="hashtag">#trading</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Storytime Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">I used to miss every pump.
+
+Then I found LunarCrush.
+
+Now I see what's gaining traction across Twitter, Reddit, TikTok, YouTube - all in one place.
+
+Social sentiment leads price. Period.
+
+Not financial advice but 📈
+
+Code [YOUR_CODE]
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#storytime</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Trend Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">POV: You found the cheat code for crypto research 🎮
+
+LunarCrush literally shows you:
+- What coins are trending
+- Sentiment (bullish or bearish)
+- Who's talking about what
+
+It's like having insider info but it's public data
+
+lunarcrush.com [YOUR_CODE]
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#fyp</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Quick Hit Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">Stop sleeping on social data 😴
+
+LunarCrush tracks crypto sentiment across every platform.
+
+When a coin trends socially before it trends in price = opportunity.
+
+Free to try. Code [YOUR_CODE] for premium.
+
+<span class="hashtag">#crypto</span> <span class="hashtag">#trading</span> <span class="hashtag">#cryptotok</span> <span class="hashtag">#altcoins</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">Duet/React Caption</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">When someone asks how I find coins early 👀
+
+It's called LunarCrush.
+
+Tracks what's trending on Twitter, Reddit, TikTok, YouTube - all in one dashboard.
+
+Galaxy Score = hype meter
+AltRank = strength ranking
+
+You're welcome 🫡
+
+Code [YOUR_CODE]
+
+<span class="hashtag">#cryptotok</span> <span class="hashtag">#fyp</span> <span class="hashtag">#crypto</span></p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+
+            <!-- Telegram Posts -->
+            <div class="posts-container" id="posts-telegram">
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">1</span>
+                        <span class="post-type">Tool Share</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">🚀 Tool recommendation: LunarCrush
+
+Tracks social sentiment across crypto Twitter, Reddit, TikTok & more.
+
+Features I use most:
+→ Galaxy Score for overall sentiment
+→ AltRank for relative strength
+→ Creator rankings for alpha
+
+lunarcrush.com
+Code: [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">2</span>
+                        <span class="post-type">Alpha Drop</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">📊 Social alpha tool
+
+LunarCrush aggregates 100M+ social posts daily across:
+• Twitter/X
+• Reddit
+• TikTok
+• YouTube
+
+Galaxy Score shows social health.
+AltRank shows relative momentum.
+
+Useful for spotting narratives early.
+
+Code [YOUR_CODE] for discount
+lunarcrush.com</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">3</span>
+                        <span class="post-type">Research Stack</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">🔍 My research stack includes:
+
+LunarCrush - social sentiment
+- Tracks what's trending before price moves
+- Shows influencer activity
+- Quantifies market attention
+
+Not the only tool you need but a solid edge.
+
+lunarcrush.com | [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">4</span>
+                        <span class="post-type">Quick Tip</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">💡 Tip: Use social data
+
+LunarCrush tracks crypto sentiment in real-time.
+
+When Galaxy Score spikes while price stays flat = watch closely.
+
+Narratives form on social before they show in charts.
+
+lunarcrush.com
+Discount code: [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">5</span>
+                        <span class="post-type">Group Share</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">🌙 For anyone not using LunarCrush yet:
+
+It's a social intelligence platform for crypto. Tracks mentions, sentiment, engagement across all major platforms.
+
+Free tier is solid. Paid unlocks more.
+
+API available for builders.
+
+lunarcrush.com
+Code: [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-header">
+                        <span class="post-number">6</span>
+                        <span class="post-type">Daily Alpha</span>
+                    </div>
+                    <div class="post-content">
+                        <p class="post-text">📈 Daily alpha tip:
+
+Check LunarCrush before making moves.
+
+What to look for:
+→ Galaxy Score trending up
+→ AltRank improving
+→ Sentiment shifting positive
+→ Social volume increasing
+
+When all align = worth deeper research.
+
+lunarcrush.com
+Code: [YOUR_CODE]</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPost(this)">Copy Post</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Common questions about the affiliate program</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How much commission do I earn?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            You earn 20% recurring commission on all subscription payments from users who sign up with your code. This means you earn every month they stay subscribed. For example: a Lunatic tier referral ($76.50/mo) earns you $15.30/mo. A Professional tier referral ($765/mo) earns you $153/mo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>When and how do I get paid?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Commissions are paid out monthly in USD. You'll receive payment for the previous month's verified conversions. Minimum payout threshold is $50. Payments are made via your preferred method set in the affiliate portal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does the referral attribution last?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Your affiliate code attribution lasts for the lifetime of the referred user's account. Once they sign up with your code, you earn commission on all their future subscription payments - forever.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I promote LunarCrush with paid ads?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes, you can use paid advertising to promote your affiliate code. However, you cannot bid on "LunarCrush" branded keywords or use our trademarks in ad copy in a way that suggests official affiliation. Standard advertising guidelines apply.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What content performs best?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Our top affiliates share authentic experiences and real data from LunarCrush. Educational content (how to use Galaxy Score, interpreting AltRank), market analysis posts using LC data, and video tutorials consistently drive the highest conversions. Avoid generic "sign up for this tool" posts.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Where do I find my affiliate code?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Your unique affiliate code is available in the <a href="https://lunarcrush.com/affiliate/portal">Affiliate Portal</a>. You can also create custom tracking codes for different campaigns to see which content performs best.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do I need a paid subscription to be an affiliate?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No, you don't need a paid subscription to join the affiliate program. However, having a subscription gives you hands-on experience with all features, which typically results in better content and higher conversions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Who can I contact for support?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            For affiliate program support, reach out to <a href="mailto:affiliates@lunarcrush.com">affiliates@lunarcrush.com</a>. We typically respond within 24-48 hours.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links - Centered -->
+        <div class="quick-links">
+            <a href="https://lunarcrush.com/affiliate/portal" class="quick-link">
+                🚀 Affiliate Portal
+            </a>
+            <a href="https://twitter.com/lunarcrush" class="quick-link">
+                𝕏 Follow on X
+            </a>
+            <a href="https://lunarcrush.com/support" class="quick-link">
+                💬 Contact Support
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <a href="https://lunarcrush.com" class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" stroke="#f0f6fc" stroke-width="2" fill="none"/>
+                            <circle cx="16" cy="16" r="6" fill="#f0f6fc"/>
+                        </svg>
+                    </div>
+                    <span class="footer-logo-text">LunarCrush</span>
+                </a>
+                <div class="footer-legal">
+                    <a href="https://lunarcrush.com/terms">Terms</a>
+                    <span>|</span>
+                    <a href="https://lunarcrush.com/privacy">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="https://lunarcrush.com/pricing">Pricing</a>
+                    <a href="https://lunarcrush.com/support">Support</a>
+                    <a href="https://shop.lunarcrush.com">Shop</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="https://twitter.com/lunarcrush" title="X/Twitter">𝕏</a>
+                    <a href="https://youtube.com/lunarcrush" title="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.5.6c-1 .3-1.7 1.1-2 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2.1 1.9.6 9.5.6 9.5.6s7.6 0 9.5-.6c1-.3 1.7-1.1 2-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.5v-7l6.4 3.5-6.4 3.5z"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/lunarcrush" title="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 8.2l-1.8 8.5c-.1.6-.5.7-1 .5l-2.8-2.1-1.3 1.3c-.2.2-.3.3-.6.3l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 4-2.7-.8c-.6-.2-.6-.6.1-.9l10.6-4.1c.5-.2.9.1.8.8z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/lunarcrush" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4 1.3-.1 1.6-.1 4.9-.1M12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2.1 5 0 5.9 0 7.2 0 8.5 0 8.9 0 12.2s0 3.7.1 5c.1 1.3.3 2.2.6 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-3-.3-.8-.7-1.5-1.4-2.2-.7-.7-1.4-1.1-2.2-1.4-.8-.3-1.7-.5-3-.6C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.8c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero background texture - dot matrix pattern
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = 600;
+            drawTexture();
+        }
+
+        function drawTexture() {
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw dot matrix pattern
+            const dotSpacing = 12;
+            const dotRadius = 1;
+            
+            for (let x = 0; x < width; x += dotSpacing) {
+                for (let y = 0; y < height; y += dotSpacing) {
+                    // Calculate distance from center for fade effect
+                    const centerX = width / 2;
+                    const centerY = height / 3;
+                    const dist = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+                    const maxDist = Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height, 2));
+                    const fade = Math.max(0, 1 - (dist / maxDist) * 1.2);
+                    
+                    // Add some randomness for texture
+                    const noise = Math.sin(x * 0.1 + y * 0.1) * 0.5 + 0.5;
+                    const alpha = fade * noise * 0.15;
+                    
+                    if (alpha > 0.02) {
+                        ctx.beginPath();
+                        ctx.arc(x, y, dotRadius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(74, 140, 255, ${alpha})`;
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Media tabs
+        function switchMediaTab(tab) {
+            document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById('panel-' + tab).classList.add('active');
+        }
+
+        // Carousel scrolling
+        function scrollCarousel(type, direction) {
+            const carousel = document.getElementById('carousel-' + type);
+            const scrollAmount = 340 * direction;
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        // Platform tabs
+        function switchPlatform(platform) {
+            document.querySelectorAll('.platform-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.posts-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById('posts-' + platform).classList.add('active');
+        }
+
+        // FAQ toggle
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            item.classList.toggle('open');
+        }
+
+        // Copy post content
+        function copyPost(btn) {
+            const postCard = btn.closest('.post-card');
+            const postText = postCard.querySelector('.post-text').innerText;
+            
+            navigator.clipboard.writeText(postText).then(() => {
+                btn.classList.add('copied');
+                btn.textContent = '✓ Copied!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.textContent = 'Copy Post';
+                }, 2000);
+            });
+        }
+
+        // Copy color
+        function copyColor(hex) {
+            navigator.clipboard.writeText(hex);
+        }
+
+        // Asset download (placeholder)
+        function downloadAsset(type, format) {
+            alert(`Download ${type}${format ? ' in ' + format.toUpperCase() + ' format' : ''}\n\nIn production, this would download the actual file from LunarCrush's asset server.`);
+        }
+
+        // Open Figma
+        function openFigma(template) {
+            alert(`Opening Figma template: ${template}\n\nIn production, this would open the Figma file in a new tab.`);
+        }
+
+        // Open Canva
+        function openCanva(template) {
+            alert(`Opening Canva template: ${template}\n\nIn production, this would open the Canva template in a new tab.`);
+        }
+    </script>
+</body>
+</html>
